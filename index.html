@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Previsão do Tempo</title>
+  <style>
+    ul{
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+    }
+       #conteudo {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      background-color: #f5f5f5;
+      border-radius: 6px;
+    }
+    #div-clima {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-family: Arial, sans-serif;
+      margin-top: 1rem;
+    }
+    .weather-card {
+      background: #f0f4f8;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      width: 160px;
+      text-align: center;
+    }
+    .weather-date {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      color: #333;
+    }
+    .weather-temp {
+      font-size: 2rem;
+      margin: 0.5rem 0;
+      color: #e65100;
+    }
+    .weather-precip {
+      font-size: 0.9rem;
+      color: #0077be;
+    }
+  </style>
+</head>
+<body>
+    <header>
+     
+    </header>
+    <main>
+        <section>
+            <h1>previsão do tempo</h1>
+            <p>qual cidade você deseja consultar?</p>
+            <input type="text" id="cidade" placeholder="Digite a cidade" />
+            <button id="button-buscar">buscar</button>
+        </section>
+    </main>
+    <ul><li data-section="chuva">Chuva</li>
+    <li data-section="vento">Vento</li>
+    <li data-section="temperatura">Temperatura</li></ul>
+     <div id="conteudo" style="display: none;"></div>
+  <div id="div-clima"></div>
+
+<script src="index.js"></script>
+</body>
+</html>
