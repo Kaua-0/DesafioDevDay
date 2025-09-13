@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Previsão do Tempo</title>
+  <style>
+    * {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: #e8f0fe;
+  color: #333;
+  padding: 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main section {
+  max-width: 480px;
+  width: 100%;
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+main h1 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #1e88e5;
+  margin-bottom: 0.3rem;
+}
+
+main p {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+input#cidade {
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #1e88e5;
+  border-radius: 6px 0 0 6px;
+  width: 70%;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input#cidade:focus {
+  border-color: #1565c0;
+}
+
+button#button-buscar {
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  border: 2px solid #1e88e5;
+  border-left: none;
+  border-radius: 0 6px 6px 0;
+  background-color: #1e88e5;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button#button-buscar:hover {
+  background-color: #1565c0;
+}
+ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  justify-content: center;
+  max-width: 480px;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+ul li {
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: #1e88e5;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  user-select: none;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+
+ul li:hover {
+  background-color: #bbdefb;
+  border-color: #1e88e5;
+}
+
+ul li.active {
+  background-color: #1e88e5;
+  color: white;
+  border-color: #1565c0;
+}
+
+/* Div de conteúdo das abas */
+#conteudo {
+  max-width: 480px;
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  display: none; 
+  text-align: center;
+}
+
+#clima-atual {
+  max-width: 480px;
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+#clima-atual img {
+  width: 80px;
+  margin-bottom: 0.5rem;
+}
+
+/* Cards da previsão */
+#div-clima {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  max-width: 480px;
+  width: 100%;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}
+
+.weather-card {
+  background: #f0f4f8;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 140px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.weather-card:hover {
+  transform: translateY(-6px);
+}
+
+.weather-date {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #333;
+  text-transform: capitalize;
+}
+
+.weather-temp {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  color: #e65100;
+}
+
+.weather-precip {
+  font-size: 0.9rem;
+  color: #0077be;
+}
+@media (max-width: 520px) {
+  main section, #conteudo, #clima-atual, #div-clima {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  #div-clima {
+    gap: 0.8rem;
+  }
+
+  .weather-card {
+    width: 100px;
+    padding: 0.8rem;
+  }
+
+  .weather-temp {
+    font-size: 1.5rem;
+  }
+
+  ul {
+    gap: 1rem;
+  }
+
+  ul li {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+  </style>
+</head>
+<body>
+    <header>
+     
+    </header>
+    <main>
+        <section>
+            <h1>previsão do tempo</h1>
+            <p>qual cidade você deseja consultar?</p>
+            <input type="text" id="cidade" placeholder="Digite a cidade" />
+            <button id="button-buscar">buscar</button>
+        </section>
+        <section>
+            <h2>clima atual</h2>
+            <ul><li data-section="chuva">Chuva</li>
+                <li data-section="vento">Vento</li>
+                <li data-section="temperatura">Temperatura</li></ul>
+
+        </section>
+        <section>
+            <h2>previsibilidade do tempo</h2>
+            <div id="conteudo" style="display: none;"></div>
+
+        </section>
+      <div id="div-clima"></div>
+    </main>
+    
+
+<script src="index.js"></script>
+</body>
+</html>
