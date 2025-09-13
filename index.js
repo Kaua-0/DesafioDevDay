@@ -82,7 +82,7 @@ let weatherData = null;
 
     const renderForecast = (forecast) => {
       const divClima = document.getElementById('div-clima');
-      divClima.innerHTML = ''; // limpa antes de popular
+      divClima.innerHTML = '';
 
       forecast.forEach(dia => {
         const date = new Date(dia.date);

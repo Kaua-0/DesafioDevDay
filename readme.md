@@ -1,7 +1,7 @@
 # Aplicação de Previsão do Tempo
-## Integrates do Projeto
-## - Lucas silva de paula
-## - Antonio Kauã de Araujo Silva
+## Integrantes do Projeto
+- Lucas Silva de Paula
+- Antonio Kauã de Araujo Silva
 
 ## Objetivo
 
@@ -22,7 +22,6 @@ O foco é disponibilizar dados meteorológicos de forma amigável, utilizando AP
 - **CSS3**: estilização responsiva e agradável.
 - **APIs utilizadas**:
   - [WeatherAPI](https://www.weatherapi.com/) para dados meteorológicos.
-  - [BigDataCloud Reverse Geocoding](https://www.bigdatacloud.com/) para converter coordenadas em localidade.
 
 ---
 
@@ -50,7 +49,7 @@ O foco é disponibilizar dados meteorológicos de forma amigável, utilizando AP
 
 - `index.html` — página principal e estrutura do layout.
 - `index.js` — código JavaScript que gerencia API calls e atualização do DOM.
-- `style.css` (ou estilos inline no `<style>`) — estilos e responsividade.
+- (estilos inline no `<style>`) — estilos e responsividade.
 
 ---
 
@@ -63,6 +62,40 @@ Para utilizar a aplicação, é necessário uma chave válida da [WeatherAPI](ht
 ## Licença
 
 Projeto open-source para fins educacionais e pessoais.
+
+---
+
+## Pontos de melhoria
+
+- **Separação dos estilos (CSS)**  
+  Extrair os estilos inline para um arquivo CSS externo, melhorando a legibilidade e manutenção do projeto.
+
+- **Modularização do código JavaScript**  
+  Criar funções reutilizáveis para chamadas às APIs e manipulação do DOM. Organizar o código em módulos para facilitar manutenção e escalabilidade.
+
+- **Tratamento de erros aprimorado**  
+  Exibir mensagens claras ao usuário em casos de erro na busca, falha na geolocalização ou limite de requisições.
+
+- **Melhorar acessibilidade**  
+  Adicionar atributos ARIA, melhorar navegação por teclado e garantir bom contraste nas cores.
+
+- **Cache local / armazenamento**  
+  Utilizar `localStorage` para guardar a última cidade consultada, evitando chamadas repetidas à API.
+
+- **Feedback visual**  
+  Implementar indicadores de carregamento (spinners) e mensagens de confirmação para sucesso ou erro nas operações.
+
+- **Internacionalização (i18n)**  
+  Preparar a aplicação para suportar múltiplos idiomas no futuro, facilitando tradução das interfaces.
+
+- **Melhorar responsividade**  
+  Ajustar o layout e fontes para diversos tamanhos de tela, especialmente dispositivos móveis mais antigos.
+
+- **Testes automatizados**  
+  Criar testes unitários para funções principais utilizando frameworks como Jest.
+
+- **Uso de frameworks/libraries (opcional)**  
+  Avaliar o uso de frameworks modernos (React, Vue, Svelte) para melhorar a estrutura e manutenção da interface.
 
 ---
 

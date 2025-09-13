@@ -217,12 +217,21 @@ ul li.active {
             <input type="text" id="cidade" placeholder="Digite a cidade" />
             <button id="button-buscar">buscar</button>
         </section>
+        <section>
+            <h2>clima atual</h2>
+            <ul><li data-section="chuva">Chuva</li>
+                <li data-section="vento">Vento</li>
+                <li data-section="temperatura">Temperatura</li></ul>
+
+        </section>
+        <section>
+            <h2>previsibilidade do tempo</h2>
+            <div id="conteudo" style="display: none;"></div>
+
+        </section>
+      <div id="div-clima"></div>
     </main>
-    <ul><li data-section="chuva">Chuva</li>
-    <li data-section="vento">Vento</li>
-    <li data-section="temperatura">Temperatura</li></ul>
-     <div id="conteudo" style="display: none;"></div>
-  <div id="div-clima"></div>
+    
 
 <script src="index.js"></script>
 </body>
